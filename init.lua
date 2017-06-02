@@ -32,42 +32,49 @@ minetest.register_tool("mese_armor:shield_mese", {
 })
 
 --octu
+if minetest.get_modpath("octutools") then
+	minetest.register_tool("mese_armor:helmet_octu", {
+		description = "Octu Helmet",
+		inventory_image = "mese_armor_inv_helmet_octu.png",
+		groups = {armor_head=18, armor_heal=25, armor_fire=2, armor_use=25},
+		wear = 0,
+	})
+	minetest.register_tool("mese_armor:chestplate_octu", {
+		description = "Octu Chestplate",
+		inventory_image = "mese_armor_inv_chestplate_octu.png",
+		groups = {armor_torso=20, armor_heal=25, armor_fire=2, armor_use=25},
+		wear = 0,
+	})
+	minetest.register_tool("mese_armor:leggings_octu", {
+		description = "Octu Leggings",
+		inventory_image = "mese_armor_inv_leggings_octu.png",
+		groups = {armor_legs=20, armor_heal=25, armor_fire=2, armor_use=25},
+		wear = 0,
+	})
+	minetest.register_tool("mese_armor:boots_octu", {
+		description = "Octu Boots",
+		inventory_image = "mese_armor_inv_boots_octu.png",
+		groups = {armor_feet=19, armor_heal=25, armor_fire=2, armor_use=25},
+		wear = 0,
+	})
+	minetest.register_tool("mese_armor:shield_octu", {
+		description = "Octu Shield",
+		inventory_image = "mese_armor_inv_shield_octu.png",
+		groups = {armor_shield=18, armor_heal=25, armor_fire=2, armor_use=25},
+		wear = 0,
+	})
+	
+	local craft_ingreds = {
+		mese = "default:mese_crystal",
+		octu = "octutool:mese",
+	}
+else
 
-minetest.register_tool("mese_armor:helmet_octu", {
-	description = "Octu Helmet",
-	inventory_image = "mese_armor_inv_helmet_octu.png",
-	groups = {armor_head=18, armor_heal=25, armor_fire=2, armor_use=25},
-	wear = 0,
-})
-minetest.register_tool("mese_armor:chestplate_octu", {
-	description = "Octu Chestplate",
-	inventory_image = "mese_armor_inv_chestplate_octu.png",
-	groups = {armor_torso=20, armor_heal=25, armor_fire=2, armor_use=25},
-	wear = 0,
-})
-minetest.register_tool("mese_armor:leggings_octu", {
-	description = "Octu Leggings",
-	inventory_image = "mese_armor_inv_leggings_octu.png",
-	groups = {armor_legs=20, armor_heal=25, armor_fire=2, armor_use=25},
-	wear = 0,
-})
-minetest.register_tool("mese_armor:boots_octu", {
-	description = "Octu Boots",
-	inventory_image = "mese_armor_inv_boots_octu.png",
-	groups = {armor_feet=19, armor_heal=25, armor_fire=2, armor_use=25},
-	wear = 0,
-})
-minetest.register_tool("mese_armor:shield_octu", {
-	description = "Octu Shield",
-	inventory_image = "mese_armor_inv_shield_octu.png",
-	groups = {armor_shield=18, armor_heal=25, armor_fire=2, armor_use=25},
-	wear = 0,
-})
+	local craft_ingreds = {
+		mese = "default:mese_crystal",
+	}
+end
 
-local craft_ingreds = {
-	mese = "default:mese_crystal",
-	octu = "octutool:mese",
-}
 
 for k, v in pairs(craft_ingreds) do
 	minetest.register_craft({
