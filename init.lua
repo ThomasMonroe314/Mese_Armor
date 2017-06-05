@@ -31,8 +31,50 @@ minetest.register_tool("mese_armor:shield_mese", {
 	wear = 0,
 })
 
+k = 'mese'
+v = 'default:mese_crystal'
+minetest.register_craft({
+	output = "mese_armor:helmet_"..k,
+	recipe = {
+		{v, v, v},
+		{v, "", v},
+		{"", "", ""},
+	},
+})
+minetest.register_craft({
+	output = "mese_armor:chestplate_"..k,
+	recipe = {
+		{v, "", v},
+		{v, v, v},
+		{v, v, v},
+	},
+})
+minetest.register_craft({
+	output = "mese_armor:leggings_"..k,
+	recipe = {
+		{v, v, v},
+		{v, "", v},
+		{v, "", v},
+	},
+})
+minetest.register_craft({
+	output = "mese_armor:boots_"..k,
+	recipe = {
+		{v, "", v},
+		{v, "", v},
+	},
+})
+minetest.register_craft({
+	output = "mese_armor:shield_"..k,
+	recipe = {
+		{v, v, v},
+		{v, v, v},
+		{"", v, ""},
+	},
+})
+
 --octu
-if minetest.get_modpath("octutools") then
+if minetest.get_modpath("octutool") then
 	minetest.register_tool("mese_armor:helmet_octu", {
 		description = "Octu Helmet",
 		inventory_image = "mese_armor_inv_helmet_octu.png",
@@ -64,19 +106,8 @@ if minetest.get_modpath("octutools") then
 		wear = 0,
 	})
 	
-	local craft_ingreds = {
-		mese = "default:mese_crystal",
-		octu = "octutool:mese",
-	}
-else
-
-	local craft_ingreds = {
-		mese = "default:mese_crystal"
-	}
-end
-
-
-for k, v in pairs(craft_ingreds) do
+	k = 'octu'
+	v = 'octutool:mese'
 	minetest.register_craft({
 		output = "mese_armor:helmet_"..k,
 		recipe = {
@@ -117,3 +148,6 @@ for k, v in pairs(craft_ingreds) do
 		},
 	})
 end
+
+
+
