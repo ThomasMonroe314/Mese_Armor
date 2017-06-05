@@ -71,7 +71,7 @@ if minetest.get_modpath("octutools") then
 else
 
 	local craft_ingreds = {
-		mese = "default:mese_crystal",
+		mese = "default:mese_crystal"
 	}
 end
 
